@@ -1,11 +1,11 @@
 # Basic options
-title: Workshop Name
-short_name: workshop-name
-developers: [A name]
-description: One sentence description of workshop.
-n_sessions: 3
-prereq: NA
-url: https://uniexeterrse.github.io/repo-name
+title: Introduction to High Performance Computing and ISCA
+short_name: Intro to ISCA
+developers: Matthew West
+description: Learn what a HPC system is, and how to use it to increase the computational power of your research.
+n_sessions: 2
+prereq: Intro to UNIX
+url: https://uniexeterrse.github.io/intro-to-isca
 
 # Specify that things in the episodes collection should be output.
 collections:
