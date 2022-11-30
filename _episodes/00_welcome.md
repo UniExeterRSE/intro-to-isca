@@ -7,11 +7,14 @@ toc: true
 
 ## Welcome
 
+Welcome to **Introduction to HPC and ISCA**. 
+
+We will start by introducing the workshop leaders and helpers. We are all here because we are passionate about sharing our knowledge and supporting the development of our colleagues. For most of us, this is not a requirement of our current position and we are doing this at the margins of our time.
+
+
 This workshop, and the others in the series, were put together by the Research Software Engineering Group supported by a team of volunteers. It has been adapted/influenced by Carpentries lessons. This is as part of an ongoing initiative to provide training for staff and students to expand their skill sets and position themselves to confidently perform the informatics elements of their research projects in an efficient and reproducible way. The programme and workshops are under constant evolution, and we are grateful for your feedback which is a core component of this process. 
 
-We will start by introducing the workshop leaders and helpers. We are all here because we are passionate about sharing our knowledge and supporting the development of our colleagues. For some of us, this is not a requirement of our current position and we are doing this at the margins of our time. 
 
-We will have a collaborative document where we can post resources and answer questions. You are welcome to introduce yourselves at the top of that document. 
 
 ## Housekeeping
 
