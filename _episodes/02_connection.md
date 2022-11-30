@@ -1,3 +1,12 @@
+---
+layout: page
+title: How do I connect to a HPC Cluster?
+order: 3
+session: 1
+length: 20
+toc: true
+---
+
 ## Questions
 
     How do I log in to a remote HPC system?

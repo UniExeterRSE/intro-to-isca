@@ -2,40 +2,71 @@
 
 ## From the Internet
 
-One of the most straightforward ways to download files is to use either curl or wget. One of these is usually installed in most Linux shells, on Mac OS terminal and in GitBash. Any file that can be downloaded in your web browser through a direct link can be downloaded using curl -O or wget. This is a quick way to download datasets or source code.
+If your data is available on the internet, you can download it directly onto the cluster by issuing a command from the terminal. There are a couple of options including the **curl -O** or **wget** command. One of these is usually installed in most Linux shells, on Mac OS terminal and in GitBash.  This is a quick way to download datasets or source code without needing to download them to your local computer first. 
 
-The syntax for these commands is: curl -O https://some/link/to/a/file and wget https://some/link/to/a/file. Try it out by downloading some material we’ll use later on, from a terminal on your local machine.
+The syntax for these commands is: 
 
+
+> curl -O https://some/link/to/a/file 
+>
+> wget https://some/link/to/a/file. 
+
+Both of these commands will download the files to the folder you are currently located in. 
+
+Try it out by downloading some material we’ll use later on, from a terminal on your local machine.
+
+```
 [user@laptop ~]$ curl -O https://carpentries-incubator.github.io/hpc-intro/files/hpc-intro-data.tar.gz
-
+```
 or
-
+```
 [user@laptop ~]$ wget https://carpentries-incubator.github.io/hpc-intro/files/hpc-intro-data.tar.gz
+```
 
+## From another computer or cluster
 
-## Using SCP from the command line
+To copy a single file to or from the cluster, we can use scp (“secure copy”). The scp command is a relative of the ssh command we used to access the system. The syntax is essentially
 
-To copy a single file to or from the cluster, we can use scp (“secure copy”). The syntax can be a little complex for new users, but we’ll break it down. The scp command is a relative of the ssh command we used to access the system, and can use the same public-key authentication mechanism.
+```
+[user@laptop ~]$ scp <file to upload> <where to upload to>
+```
 
-To upload to another computer:
+There are two or three components we need when copying to a remote machine:
 
-[user@laptop ~]$ scp path/to/local/file.txt yourUsername@graham.computecanada.ca:/path/on/Graham
+1) the address of the remote machine 
+2) where on the remote machine the file we want is located or where we want to upload our file to
+3) any login usernames we need to identify ourselves
 
-To download from another computer:
+These three pieces of informations need to be constructed into a single string with no spaces as follows:
 
-[user@laptop ~]$ scp yourUsername@graham.computecanada.ca:/path/on/Graham/file.txt path/to/local/
+<username>@<remote address>:<filepath>
+
+When transferring files between machines, we can be logged into either machine. 
+
+If the file is located on your machine and you want to upload to another computer:
+
+```
+[user@laptop ~]$ scp path/to/local/file.txt yourUsername@login.isca.ex.ac.uk:/path/on/ISCA
+```
+
+To download from another computer to your local machine:
+
+[user@laptop ~]$ scp yourUsername@login.isca.ex.ac.uk:/path/on/ISCA/file.txt path/to/local/
 
 Note that everything after the : is relative to our home directory on the remote computer. We can leave it at that if we don’t care where the file goes.
 
-[user@laptop ~]$ scp local-file.txt yourUsername@graham.computecanada.ca:
+For example to upload a file on our local machine to a remote machine we could use
+
+[user@laptop ~]$ scp local-file.txt yourUsername@login.isca.ex.ac.uk
+
 
     Upload a File
 
-    Copy the file you just downloaded from the Internet to your home directory on Graham.
+    Copy the file you just downloaded from the Internet to your home directory on ISCA.
 
         Solution
 
-        [user@laptop ~]$ scp hpc-intro-data.tar.gz yourUsername@graham.computecanada.ca:~/
+        [user@laptop ~]$ scp hpc-intro-data.tar.gz yourUsername@login.isca.ex.ac.uk:~/
 
 Most computer clusters are protected from the open internet by a firewall. This means that the curl command will fail, as an address outside the firewall is unreachable from the inside. To get around this, run the curl or wget command from your local machine to download the file, then use the scp command to upload it to the cluster.
 
@@ -47,7 +78,7 @@ Download and install the FileZilla client from https://filezilla-project.org. Af
 
 To connect to the cluster, we’ll just need to enter our credentials at the top of the screen:
 
-    Host: sftp://graham.computecanada.ca
+    Host: sftp://login.isca.ex.ac.uk
     User: Your cluster username
     Password: Your cluster password
     Port: (leave blank to use the default port)
