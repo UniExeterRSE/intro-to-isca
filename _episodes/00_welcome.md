@@ -7,7 +7,7 @@ toc: true
 
 ## Welcome
 
-Welcome to **Introduction to HPC and ISCA**. 
+Welcome to **Introduction to HPC and ISCA**. A high performance computing (HPC) cluster is an essential tool for computational tasks that are too intensive for a personal computer, for example analysing large datasets or performing high density simulations. This course will introduce ISCA, the University of Exeter’s HPC cluster. It will teach participants how to design a HPC workflow, interrogate the SLURM scheduling system, and run simple jobs on the cluster. At the end of this interactive course, participants will be able to translate what they have learnt to improve the efficiency of their computational research, and run their analyses on ISCA.
 
 We will start by introducing the workshop leaders and helpers. We are all here because we are passionate about sharing our knowledge and supporting the development of our colleagues. For most of us, this is not a requirement of our current position and we are doing this at the margins of our time. 
 
