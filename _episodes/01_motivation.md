@@ -54,14 +54,6 @@ High Performance Computers are really clusters of hundreds (sometimes thousands)
 
 Each node is likely a lot more powerful than the computer you have on your desk right now, and to look at they are very different, but inside they contain all the same basic components like processors, hard disks, memory, and an operating system. Where the true power of HPC comes in is the nodes' ability to work together. You submit your code as self-contained jobs from a login node, and the rest of the nodes, or compute nodes, are where your code actually runs. HPC systems typically use a resource manager and batch scheduler to handle the distribution of jobs to nodes.
 
-<div class="mermaid">
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-</div>
-
 ## How do I communicate with the HPC cluster? 
 
 Most HPC systems are built with a Unix operating system. It is rare for a HPC system to have the nice user interface, that you might be used to using on your laptop. Therefore, using HPC systems often involves the use of a shell through a command line interface (CLI) and either specialized software or programming techniques. This is often the first barrier to using the system, and can seem off-putting. While the more Unix you know, the more comfortable you will feel using the system, you only **need** to know some common commands to get started. 
