@@ -90,3 +90,18 @@ Let’s examine the output of `module avail` more closely. We can restrict the o
 You should notice at that there are multiple different versions of Python available, denoted after a `/` including major versions (2 vs 3) and subversion (X.X).
 
 We can load the specific version of a software by specifying it when we run `module load`  For example to load Python2 we could run `module load Python/2.7.18-GCCcore-9.3.0`
+
+## What if the software I need is not available. 
+
+Installing software can be a fustrating experience. As software are often interrelated, a faulty or partial installation of one piece of software can have fairly dramatic impact on other software. For this reason, the locations where software is typically installed is not writable by regular users. You will not have "admin" rights or "root" access and limits you abilty to install software in the usual manner. 
+
+There are a couple of options if you require software that is not currently avaiable or you require a more bespoke version. The optimal solution depends on the specific software.
+
++ Is it a software that needs installing, or is it just an executable that you can run? Some software come ready complied and you can download the executable file to either your home or project files. Assuming that you can identify and load all the relevant dependecies this should be very quick to do. A common issue with this method is ensuring that the "file" has the correct permissions and the shell recognises it as a programme rather than a file. 
++ Request for it to be installed. If the software needs a more involved installation process, that takes advatange of root privledges they you will need sys admin to install for you. Log an enquiry and the ISCA support team will attempt to install it for you.
++ There are package and environmental managers that makes it easy to install software even if you don't have root access. One example is Anaconda. To use Anaconda or Miniconda, you first need to load the relevant module with either 
+  + `module load Miniconda` 
+  + `module load Minicoda3` (for Python3)
+  + `module load Anaconda`
+  + `module load Anaconda3` (for Python3)
+  you can then create environments as described on the [Anaconda website](https://docs.anaconda.com/navigator/tutorials/index.html)
