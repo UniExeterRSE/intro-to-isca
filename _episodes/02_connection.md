@@ -48,7 +48,7 @@ you@laptop:~$ ssh username@hostname
 
 where `username` is your standard login and the `hostname` is address of the server you wish to log into. For this workshop the `hostname` will be `login02.isca.exeter.ac.uk`. Don't forget the **@** symbol, like you would see in an email address. You will then be prompted for your university password.
 
-#### First Time Warning
+### First Time Warning
 An important security warning will occur whenever you attempt to log into another machine for the first time. 
 ~~~
 The authenticity of host 'login02.isca.ex.ac.uk (144.173.114.23)' can't be established.
@@ -64,6 +64,27 @@ Make sure that the IP address (i.e. `144.173.114.23`) and the appropriate key fi
 
 ### Config File
 
+Remembering the long hostnames can be a pain. We can create a config file that allows us to use shorter and more memorable ones for machines we use regularly using an ssh `config` file. For those using a Unix terminal, the two commands below will create a file with access restricted to just the current user.
+~~~
+touch ~/.ssh/config
+chmod 600 ~/.ssh/config
+~~~
+{: .language-bash}
+
+Open up that file in your preferred text editor and copy the following example into it. **Remember** to swap your specific `username` for the placeholder.
+~~~
+# Configuration file for simplifying SSH logins
+Host login.isca
+    User your_username
+    Hostname login02.isca.ex.ac.uk
+~~~
+{: .language-bash}
+
+Now you can log in with a far shorter and easier to remember command. But you still will be prompted for your password.
+~~~
+you@laptop:~$ ssh login.isca
+~~~
+{: .language-bash}
 
 
 ## Graphical Interfaces
