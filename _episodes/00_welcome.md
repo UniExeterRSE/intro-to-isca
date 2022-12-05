@@ -30,9 +30,7 @@ Championed by and in partnership with
 
 This workshop, and the others in the series, was put together by Research IT, the Research Software Engineering Group alongside other researchers at UoE. It has been adapted from the (HPC Carpentries lessons)[https://www.hpc-carpentry.org/hpc-shell/]. The programme and workshops are under constant evolution. We appreciate your patience as we develop and test these materials and we are grateful for your (feedback)[https://forms.office.com/r/s4GK3VjT6v] which is a core component of this process. 
 
-
-
-## Housekeeping
+## Workshop format
 
 The workshop in organised into episodes of content, which can be seen in the workshop schedule available on the course website. Our aim is to have an official break every 60-90 minutes, but there will also be periods between demonstrations where you are free to take additional comfort breaks if required.  This workshop will be delivered using live coding which you should follow along too. There will also be exercises to consolidate our knowledge. 
   

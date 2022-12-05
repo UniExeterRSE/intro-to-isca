@@ -1,7 +1,7 @@
 ---
 layout: page
 title: How do I connect to a HPC Cluster?
-order: 3
+order: 4
 session: 1
 length: 20
 toc: true
