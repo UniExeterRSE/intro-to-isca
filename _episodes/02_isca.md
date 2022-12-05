@@ -15,7 +15,7 @@ The first of its kind in a UK University, ISCA combines a traditional HPC cluste
 
 ISCA runs on CentOS 7 Linux
 
-Your average desktop or laptop computer has between 4 and 8 CPU cores
+
 
 ## OpenStack
 
