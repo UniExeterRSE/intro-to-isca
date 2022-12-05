@@ -7,27 +7,72 @@ length: 20
 toc: true
 ---
 
-## Questions
+## Learning Objectives
 
-    How do I log in to a remote HPC system?
+At the end of this lesson you will be able to:
 
-## Objectives
+- Connect to the ISCA HPC system with your university credentials
+- Create an ssh `config` file for easier access via the command line
+- Generate a public-key pair and use this to log into ISCA
 
-    Configure secure access to a remote HPC system.
+## Via the Command Line
 
-    Connect to a remote HPC system.
+### Checking 
+The most common way to connect to a remove HPC server is via a command line shell program `ssh`. This application uses the Secure SHell protocol (or SSH) to open an encrypted network connection between two machines, allowing you to send & receive text and data without having to worry about prying eyes. It should be available in all terminal apps (Windows, Linux, & Mac), but to doublecheck type `ssh` into your terminal of choice and press enter. If it is installed properly, you should get output like that below.
 
-## SSH
+~~~
+you@laptop:~$ ssh
+~~~
+{: .language-bash}
 
-The first step in using a cluster is to establish a connection from our laptop to the cluster. When we are sitting at a computer (or standing, or holding it in our hands or on our wrists), we have come to expect a visual display with icons, widgets, and perhaps some windows or applications: a graphical user interface, or GUI. Since computer clusters are remote resources that we connect to over slow or intermittent interfaces (WiFi and VPNs especially), it is more practical to use a command-line interface, or CLI, to send commands as plain-text. If a command returns output, it is printed as plain text as well. The commands we run today will not open a window to show graphical results.
+~~~
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command [argument ...]]
+~~~
+{: .output}
 
-If you have ever opened the Windows Command Prompt or macOS Terminal, you have seen a CLI. If you have already taken The Carpentries’ courses on the UNIX Shell or Version Control, you have used the CLI on your local machine extensively. The only leap to be made here is to open a CLI on a remote machine, while taking some precautions so that other folks on the network can’t see (or change) the commands you’re running or the results the remote machine sends back. We will use the Secure SHell protocol (or SSH) to open an encrypted network connection between two machines, allowing you to send & receive text and data without having to worry about prying eyes.
-/hpc-intro/Connect%20to%20cluster
+If you do *not* get this output, please let the instructor know. But don't worry, there are other means of connecting to the system and well will cover those in a moment.
 
-SSH clients are usually command-line tools, where you provide the remote machine address as the only required argument. If your username on the remote system differs from what you use locally, you must provide that as well. If your SSH client has a graphical front-end, such as PuTTY or MobaXterm, you will set these arguments before clicking “connect.” From the terminal, you’ll write something like ssh userName@hostname, where the argument is just like an email address: the “@” symbol is used to separate the personal ID from the address of the remote machine.
+### Logging In
 
-When logging in to a laptop, tablet, or other personal device, a username, password, or pattern are normally required to prevent unauthorized access. In these situations, the likelihood of somebody else intercepting your password is low, since logging your keystrokes requires a malicious exploit or physical access. For systems like gra-login1 running an SSH server, anybody on the network can log in, or try to. Since usernames are often public or easy to guess, your password is often the weakest link in the security chain. Many clusters therefore forbid password-based login, requiring instead that you generate and configure a public-private key pair with a much stronger password. Even if your cluster does not require it, the next section will guide you through the use of SSH keys and an SSH agent to both strengthen your security and make it more convenient to log in to remote systems.
+Assuming you were given access to the system by an administrator, you should be able to login with your standard university credentials. The syntax for logging into a machine with `ssh` is 
+~~~
+you@laptop:~$ ssh username@hostname
+~~~
+{: .language-bash}
 
-## What About Windows?
+where `username` is your standard login and the `hostname` is address of the server you wish to log into. For this workshop the `hostname` will be `login02.isca.exeter.ac.uk`. Don't forget the **@** symbol, like you would see in an email address. You will then be prompted for your university password.
 
-## Whoami?
+#### First Time Warning
+An important security warning will occur whenever you attempt to log into another machine for the first time. 
+~~~
+The authenticity of host 'login02.isca.ex.ac.uk (144.173.114.23)' can't be established.
+ED25519 key fingerprint is SHA256:rPqlD8myIfJUQBINKPYCp47oIQm3sGVMUPSAWT26E/M.
+ECDSA key fingerprint is SHA256:ah29tkixxl7NW/zdJM6TSbASY3UyLsKZEKUMMZSD3X0.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+
+~~~
+{: .language-bash}
+
+Make sure that the IP address (i.e. `144.173.114.23`) and the appropriate key fingerprint that you get match the information found above. Any subsequent time you log into that same server, you should **not** see this message, as this server's fingerprint is saved in a list of `known_hosts`. If you do get this message while connecting to a server you have logged into previously, please contact a system administrator **immediately**.
+
+### Config File
+
+
+
+## Graphical Interfaces
+
+An alternative means of connecting to a remote host server is via an application like the [Putty](https://putty.org/) SSH Client. It provides nice app-based way to save host connection configs so one need not input them again each time. Like the command line option, if you haven't logged in before, it will raise a *warning* message.
+
+![windows_putty](https://user-images.githubusercontent.com/8397376/205663438-a01c2b95-fd93-448f-bc0b-f735b9733538.png)
+
+You will be prompted in a new terminal session for your username and password.
+
+
+## Public Keys
