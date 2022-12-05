@@ -45,7 +45,7 @@ To see available software modules, use `module avail`:
 
 ![](../fig/module-avail.png)
 
-This is will give you a very long list of all software, and all versions, available to load and use.  
+This is will give you a very long list of all software, and all versions, available to load and use. You can scroll through this list to find what you need. You can restrict this list by providing the first few characters of the software you are insterested in e.g. `module avail Py`
 
 ## Listing Currently Loaded Modules
 
@@ -55,7 +55,7 @@ You can use the module list command to see which modules you currently have load
 
 ## Loading and Unloading Software
 
-To load a software module, use `module load`. In this example we will load Python by typing `module load python`.
+To load a software module, use `module load`. In this example we will load Python by typing `module load python`. Note that modules are case sensitive. 
 
 In this instance we haven't specified a specific version so let's check which one we have loaded. We can do this is two ways.
 
