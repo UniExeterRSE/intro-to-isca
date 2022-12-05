@@ -7,11 +7,11 @@ length: 20
 toc: true
 ---
 
-The University of Exeter has it's own central HPC facility to enable intensive computational research. It represents a £3m investment by the University, designed to serve the advanced computing requirements of all research disciplines.  Isca is available free of charge to all research groups on all campuses. All research active staff are able to access Isca, from any University of Exeter campus or via a VPN connection. Once access has been granted you can connect using your existing Exter IT account.
+The University of Exeter has it's own central HPC facility to enable intensive computational research. It represents a £3m investment by the University, designed to serve the advanced computing requirements of all research disciplines.  ISCA is available free of charge to all research groups on all campuses. All research active staff are able to access ISCA, from any University of Exeter campus or via a VPN connection. Once access has been granted you can connect using your existing Exter IT account.
 
 ## ISCA specifications
 
-The first of its kind in a UK University, Isca combines a traditional HPC cluster with a virtualised cluster environment, providing a range of node types in a single machine. Isca consists of a range of compute resources: the traditional cluster (128 GB nodes) is complimented by two large memory (3TB) nodes, Xeon Phi accelerator nodes and GPU (Tesla K80) compute nodes. The non-traditional element of Isca includes a cluster of higher memory nodes (256 GB), 3 TB nodes, and an Openstack environment for the management of virtualised resources.
+The first of its kind in a UK University, ISCA combines a traditional HPC cluster with a virtualised cluster environment, providing a range of node types in a single machine. ISCA consists of a range of compute resources: the traditional cluster (128 GB nodes) is complimented by two large memory (3TB) nodes, Xeon Phi accelerator nodes and GPU (Tesla K80) compute nodes. The non-traditional element of ISCA includes a cluster of higher memory nodes (256 GB), 3 TB nodes, and an Openstack environment for the management of virtualised resources.
 
 ISCA runs on CentOS 7 Linux
 
@@ -32,6 +32,6 @@ Please use the following when acknowledging the use of ISCA in research papers:
 ```
 The authors would like to acknowledge the use of the University of Exeter High-Performance Computing (HPC) facility in carrying out this work.
 ```
-Also, when you submit your paper or article to Symplectic please add ARC - Isca as an Unclassified Label.
+Also, when you submit your paper or article to Symplectic please add ARC - ISCA as an Unclassified Label.
 
 ## Associated resources
