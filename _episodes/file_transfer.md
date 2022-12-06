@@ -108,14 +108,15 @@ To download files, we simply change the source and destination:
 There are a number of Graphical User Interface apps designed for transfering, two of which we can recommend are [WinSCP](https://winscp.net/eng/index.php) and [FileZilla](https://filezilla-project.org/index.php). Both provide a side-by-side file explorer, with the left showing the local directory structure and the right showing the remote system.
 
 ### WinSCP
+When starting up WinSCP, you will be prompted with a login window. The credentials are the same ones we used for Putty and like that program, you can save configuration for future use. Once logged into the remote server, one can navigate both directory structures like one would in Windows Explorer and copy files across with a simple drag & drop.
+
+![](../fig/winscp_login.png)
+
+![](../fig/winscp_explorer.png)
 
 ### FileZilla
 
-FileZilla is another cross-platform client for downloading and uploading files to and from a remote computer. 
-
-Download and install the FileZilla client from https://filezilla-project.org. After installing and opening the program, you should end up with a window with a file browser of your local system on the left hand side of the screen. When you connect to the cluster, your cluster files will appear on the right hand side.
-
-To connect to the cluster, we’ll just need to enter our credentials at the top of the screen:
+FileZilla is another cross-platform client for downloading and uploading files to and from a remote computer. To connect to the cluster, enter your credentials at the top of the screen:
 
     Host: sftp://login.isca.ex.ac.uk
     User: Your cluster username
@@ -124,3 +125,10 @@ To connect to the cluster, we’ll just need to enter our credentials at the top
 
 Hit “Quickconnect” to connect. You should see your remote files appear on the right hand side of the screen. You can drag-and-drop files between the left (local) and right (remote) sides of the screen to transfer files.
 
+![](../fig/filezilla_explorer.png)
+
+## Very Large Transfers
+
+Some research projects have **VERY** large datasets (think TBs) that may take hours/days to copy using the above tools. Because these sorts of transfer may have unforseen interruptions, we recommend using [Globus](https://docs.globus.org/) to move files. While we don't have time to cover it in this session, if you do have remote collaborators and a sizable data collection you would like moved onto campus, I recommend registering to use our Globus endpoint with your University of Exeter credentials [here](https://go.exeter.ac.uk/). We do hope to have this service connected directly up to ISCA in the new year.
+
+For those who have bulk data in our _Research Data Storage_ [system](https://universityofexeteruk.sharepoint.com/sites/TheDigitalHub/SitePages/Research-Data-Storage--Signing-in.aspx), there is a set of commands that allows you to transfer that directly onto ISCA. Again, this material is outside our introductory course, but I wanted to bring it to your attention just the same.
