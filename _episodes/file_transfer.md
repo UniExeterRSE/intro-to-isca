@@ -13,6 +13,7 @@ At the end of this lesson you will be able to:
 
 - Use `wget` to download files from the Web
 - Transfer files using `scp` & `rsync`
+- Use a GUI interface to transfer files
 - Understand what other data transfer tools Exeter has available for *large* data transfers
 
 ## From the Internet
@@ -48,7 +49,7 @@ The three components of a remote machine path `<username>@<hostname>:<filepath>`
 2) `hostname`: the remote address for the machine
 3) `filepath`: the path to the file on the specified machine
 
-While one can run `scp` commands from either the source or the target, if one is transfering to/from a personal machine, I would recommend running the commands there rather than on the server. 
+While one can run `scp` commands from either the source or the target, if one is transfering to/from a personal machine, I would recommend running the commands there rather than on the server. Like when using `ssh`, `scp` will by default prompt you for your login password each time you run the command. 
 
 For example, to copy *modules.txt* from ISCA to the *Downloads* folder on your laptop, run this command on your laptop in either a Unix shell or Windows Powershell terminal, making sure to specify your own `username`.
 ~~~
@@ -67,11 +68,50 @@ For example, to copy *modules.txt* from ISCA to the *Downloads* folder on your l
 > {: .solution}
 {: .challenge}
 
+### More than one file
+We so far have been focusing on single files, but like `cp`, `scp` can easily handle multiple files by utilizing wildcards.
+~~~
+[you@laptop ~]$ scp $HOME/Downloads/*.txt username@login02.isca.ex.ac.uk:~/
+~~~
+{: .language-bash}
+
+If you want to copy not just a list of files but a full directory structure, one includes the `-r` (recursion) option in the `scp` command.
+~~~
+[you@laptop ~]$ scp -r username@login02.isca.ex.ac.uk:/lustre/projects/Research_Project-HPC-Training $HOME/Downloads
+~~~
+{: .language-bash}
+The command above copies the entire contents of the **HPC-Training** project directory into your downloads folder.
+
+### Larger files & Collections
+As you gain experience with transferring files, you may find the `scp` command limiting. The `rsync` utility provides advanced features for file transfer and is typically faster than scp. It is especially useful for transferring large and/or many files and creating synced backup folders.
+
+The syntax is similar to `scp`. To transfer files &/or directories to another computer with commonly used options:
+~~~
+[you@laptop ~]$ rsync -avzP <source_filepath> <username>@<hostname>:<target_filepath>
+~~~
+{: .language-bash}
+
+The options are:
+ - `a` (archive) - to preserve file timestamps and permissions among other things
+ - `v` (verbose) - to get verbose output to help monitor the transfer
+ - `z` (compression) -  to compress the file during transit to reduce size and transfer time
+ - `P` (partial/progress) - to preserve partially transferred files in case of an interruption and also displays the progress of the transfer.
+
+To download files, we simply change the source and destination:
+~~~
+[you@laptop ~]$ rsync -avzP <username>@<hostname>:<source_filepath> <target_filepath>
+~~~
+{: .language-bash}
 
     
-## GUI interface
+## GUI-based tranfer apps
+There are a number of Graphical User Interface apps designed for transfering, two of which we can recommend are [WinSCP](https://winscp.net/eng/index.php) and [FileZilla](https://filezilla-project.org/index.php). Both provide a side-by-side file explorer, with the left showing the local directory structure and the right showing the remote system.
 
-FileZilla is a cross-platform client for downloading and uploading files to and from a remote computer. It is absolutely fool-proof and always works quite well. It uses the sftp protocol. You can read more about using the sftp protocol in the command line in the lesson discussion.
+### WinSCP
+
+### FileZilla
+
+FileZilla is another cross-platform client for downloading and uploading files to and from a remote computer. 
 
 Download and install the FileZilla client from https://filezilla-project.org. After installing and opening the program, you should end up with a window with a file browser of your local system on the left hand side of the screen. When you connect to the cluster, your cluster files will appear on the right hand side.
 
@@ -84,4 +124,3 @@ To connect to the cluster, we’ll just need to enter our credentials at the top
 
 Hit “Quickconnect” to connect. You should see your remote files appear on the right hand side of the screen. You can drag-and-drop files between the left (local) and right (remote) sides of the screen to transfer files.
 
-Finally, if you need to move large files (typically larger than a gigabyte) from one remote computer to another remote computer, SSH in to the computer hosting the files and use scp or rsync to transfer over to the other. This will be more efficient than using FileZilla (or related applications) that would copy from the source to your local machine, then to the destination machine.
