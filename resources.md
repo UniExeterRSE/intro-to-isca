@@ -5,6 +5,8 @@ title: Resources
 
 ## Scripts required for workshop
 
+[hello-world.sh](scripts/hello-world.sh)
+
 [hello-world-submission.sh](scripts/hello-world-submission.sh)
 
 ## Links to additional material
