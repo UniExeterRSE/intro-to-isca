@@ -7,6 +7,16 @@ length: 20
 toc: true
 ---
 
+## Questions
+
+    What HPC facilities are available at Exeter?
+
+## Objectives
+
+    Describe the HPC infrastructure at Exeter.
+
+    Request access to use ISCA at Exeter.
+
 The University of Exeter has it's own central HPC facility to enable intensive computational research. It represents a £3m investment by the University, designed to serve the advanced computing requirements of all research disciplines.  ISCA is available free of charge to all research groups on all campuses. All research active staff are able to access ISCA, from any University of Exeter campus or via a VPN connection. Once access has been granted you can connect using your existing Exter IT account.
 
 ## ISCA specifications
