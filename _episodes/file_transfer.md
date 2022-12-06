@@ -1,75 +1,74 @@
-# File Transfer Methods
+---
+layout: page
+title: File Transfer Methods
+order: 5
+session: 1
+length: 20
+toc: true
+---
+
+## Learning Objectives
+
+At the end of this lesson you will be able to:
+
+- Use `wget` to download files from the Web
+- Transfer files using `scp` & `rsync`
+- Understand what other data transfer tools Exeter has available for *large* data transfers
 
 ## From the Internet
 
-If your data is available on the internet, you can download it directly onto the cluster by issuing a command from the terminal. There are a couple of options including the **curl -O** or **wget** command. One of these is usually installed in most Linux shells, on Mac OS terminal and in GitBash.  This is a quick way to download datasets or source code without needing to download them to your local computer first. 
+If the data is readily available on the internet, we can use the program `wget` to _get_ files directly from _webpages_.
 
-The syntax for these commands is: 
+~~~
+username@login02:~$ wget <http-address of file(s)>
+~~~
+{: .language-bash}
+
+As an example, let's download the [list](http://login02.isca.ex.ac.uk:8080/modules.txt) of installed software modules on ISCA from the cluster's webserver directly into our ISCA home directory.
+
+~~~
+wget -P $HOME 'http://login02.isca.ex.ac.uk:8080/modules.txt'
+~~~
+{: .language-bash}
+
+Open up the text file with your preferred text editor and peruse the contents. This info will be valuable in a later session when we talk about managing software libraries with modules and virtual environments.
 
 
-> curl -O https://some/link/to/a/file 
+## Secure Copy
+
+### The Command Line
+When we want to copy files back and forth from the cluster, the standard tool is `scp`, which leverages the same *OpenSSH* protocol as `ssh`. The syntax of `scp` mirrors that of the shell command `cp`
+~~~
+[you@laptop ~]$ scp <File Source> <Target Destination>
+~~~
+{: .language-bash}
+
+The three components of a remote machine path `<username>@<hostname>:<filepath>`
+1) `username`: your login ID for that machine
+2) `hostname`: the remote address for the machine
+3) `filepath`: the path to the file on the specified machine
+
+While one can run `scp` commands from either the source or the target, if one is transfering to/from a personal machine, I would recommend running the commands there rather than on the server. 
+
+For example, to copy *modules.txt* from ISCA to the *Downloads* folder on your laptop, run this command on your laptop in either a Unix shell or Windows Powershell terminal, making sure to specify your own `username`.
+~~~
+[you@laptop ~]$ scp username@login02.isca.ex.ac.uk:~/modules.txt $HOME/Downloads
+~~~
+{: .language-bash}
+
+### Question
+> How would one copy *modules.txt* back from *Downloads* to our home directory on ISCA but with the new name *modules_copy.txt*?
 >
-> wget https://some/link/to/a/file. 
-
-Both of these commands will download the files to the folder you are currently located in. 
-
-Try it out by downloading some material we’ll use later on, from a terminal on your local machine.
-
-```
-[user@laptop ~]$ curl -O https://carpentries-incubator.github.io/hpc-intro/files/hpc-intro-data.tar.gz
-```
-or
-```
-[user@laptop ~]$ wget https://carpentries-incubator.github.io/hpc-intro/files/hpc-intro-data.tar.gz
-```
-
-## From another computer or cluster
-
-To copy a single file to or from the cluster, we can use scp (“secure copy”). The scp command is a relative of the ssh command we used to access the system. The syntax is essentially
-
-```
-[user@laptop ~]$ scp <file to upload> <where to upload to>
-```
-
-There are two or three components we need when copying to a remote machine:
-
-1) the address of the remote machine 
-2) where on the remote machine the file we want is located or where we want to upload our file to
-3) any login usernames we need to identify ourselves
-
-These three pieces of informations need to be constructed into a single string with no spaces as follows:
-
-<username>@<remote address>:<filepath>
-
-When transferring files between machines, we can be logged into either machine. 
-
-If the file is located on your machine and you want to upload to another computer:
-
-```
-[user@laptop ~]$ scp path/to/local/file.txt yourUsername@login.isca.ex.ac.uk:/path/on/ISCA
-```
-
-To download from another computer to your local machine:
-
-[user@laptop ~]$ scp yourUsername@login.isca.ex.ac.uk:/path/on/ISCA/file.txt path/to/local/
-
-Note that everything after the : is relative to our home directory on the remote computer. We can leave it at that if we don’t care where the file goes.
-
-For example to upload a file on our local machine to a remote machine we could use
-
-[user@laptop ~]$ scp local-file.txt yourUsername@login.isca.ex.ac.uk
+> > #### Solution
+> > ~~~
+> > scp $HOME/Downloads/modules.txt username@login02.isca.ex.ac.uk:~/modules_copy.txt
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
 
 
-    Upload a File
-
-    Copy the file you just downloaded from the Internet to your home directory on ISCA.
-
-        Solution
-
-        [user@laptop ~]$ scp hpc-intro-data.tar.gz yourUsername@login.isca.ex.ac.uk:~/
-
-Most computer clusters are protected from the open internet by a firewall. This means that the curl command will fail, as an address outside the firewall is unreachable from the inside. To get around this, run the curl or wget command from your local machine to download the file, then use the scp command to upload it to the cluster.
-
+    
 ## GUI interface
 
 FileZilla is a cross-platform client for downloading and uploading files to and from a remote computer. It is absolutely fool-proof and always works quite well. It uses the sftp protocol. You can read more about using the sftp protocol in the command line in the lesson discussion.
