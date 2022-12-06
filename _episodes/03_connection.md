@@ -91,7 +91,7 @@ you@laptop:~$ ssh login.isca
 
 An alternative means of connecting to a remote host server is via an application like the [Putty](https://putty.org/) SSH Client. It provides nice app-based way to save host connection configs so one need not input them again each time. Like the command line option, if you haven't logged in before, it will raise a *warning* message.
 
-![windows_putty](https://user-images.githubusercontent.com/8397376/205663438-a01c2b95-fd93-448f-bc0b-f735b9733538.png)
+![](../fig/windows_putty.png)
 
 You will be prompted in a new terminal session for your username and password.
 
