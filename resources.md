@@ -3,6 +3,8 @@ layout: info_page
 title: Resources
 ---
 
-## Datasets required for workshop
+## Scripts required for workshop
+
+[hello-world-submission.sh](scripts/hello-world-submission.sh)
 
 ## Links to additional material
