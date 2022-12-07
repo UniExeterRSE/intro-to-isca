@@ -31,7 +31,7 @@ ISCA consists of a range of compute resources:
 
 For a total of ~6000 Intel CPU cores in nodes connected with 40Gbps high-speed fiber networking. It is important to stress that the storage on ISCA is **not** backed up, so we recommend you keeping copies off important results & software elsewhere for safe keeping.
 
-![ISCA row A](../fig/IMG20221207130751.jpg)
+<img src="../fig/IMG20221207130751.jpg" alt="ISCA row A" width="600"/>
 
 #### Hardware & Software WIP
 **TBC**, none of these features are yet in production but they are worth mentioning anyways.
@@ -41,24 +41,14 @@ For a total of ~6000 Intel CPU cores in nodes connected with 40Gbps high-speed f
 - Upgrading the operating system to RHEL 9
 
 ## ISCA OpenStack
-In addition to the traditional HPC resources, the OpenStack system offers users an infinitely customizable virtual workstation/server experience. It has just been doubled in size to a total of ~2500 cores with a Petabyte of image storage.
+In addition to the traditional HPC resources, the OpenStack system offers users an infinitely customizable virtual workstation/server experience. It has just been doubled in size to a total of ~2500 cores with multiple Petabytes of image storage.
 
-### Usecases
+### Use Cases
 - Teaching modules with niche requirements
 - Developing in an isolated custom environment
 - Testing tools on custom defined software platforms
 
-## Additional Compute Systems
-
-### Cornwall Clusters
-For those researchers based in Cornwall, you have access to the Athena and Carson clusters, whose details can be found on Sharepoint [here](https://universityofexeteruk.sharepoint.com/sites/CornwallARC).
-
-### Isambard
-The University of Exeter is a member of the GW4 consortium, which along with the Met Office, supports the ARM-based [Isambard](https://gw4-isambard.github.io/docs/) Tier-2 supercomputer. It is one of a dozen Tier-2 national facilities that provide access to larger quantities of computing resources than what is normally found in a single campus (Tier-3) system. If you do find that your needs are beyond what Exeter itself can provide, please contact Research IT so we can direct you to the 
-
-## External Funding
-- Research IT is no longer supporting a "priority queue" on ISCA
-- If your group would like to *purchase* new hardware, please consider helping Research IT expand its capabilities.
+<img src="../fig/IMG20221207130813.jpg" alt="OpenStack row B" width="400"/>
 
 ## Working with Projects
 
@@ -79,4 +69,14 @@ The authors would like to acknowledge the use of the University of Exeter High-P
 ```
 Also, when you submit your paper or article to Symplectic please add ARC - ISCA as an Unclassified Label.
 
-## Associated resources
+## Additional Systems
+
+### Cornwall Clusters
+For those researchers based in Cornwall, you have access to the Athena and Carson clusters, whose details can be found on Sharepoint [here](https://universityofexeteruk.sharepoint.com/sites/CornwallARC).
+
+### Isambard
+The University of Exeter is a member of the GW4 consortium, which along with the Met Office, supports the ARM-based [Isambard](https://gw4-isambard.github.io/docs/) Tier-2 supercomputer. It is one of a dozen Tier-2 national facilities that provide access to larger quantities of computing resources than what is normally found in a single campus (Tier-3) system. If you do find that your needs are beyond what Exeter itself can provide, please contact Research IT so we can direct you to the 
+
+## External Funding
+- Research IT is no longer supporting a "priority queue" on ISCA
+- If your group would like to *purchase* new hardware, please consider helping Research IT expand its capabilities.
