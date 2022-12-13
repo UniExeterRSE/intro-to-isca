@@ -5,18 +5,18 @@
 #SBATCH --nodes=1 # specify number of nodes.
 #SBATCH --ntasks-per-node=1 # specify number of processors per node
 #SBATCH --mail-type=END # send email at job completion 
-#SBATCH --output=exampleRjob.o
-#SBATCH --error=exampleRjob.e
-#SBATCH --job-name=exampleRjob
+#SBATCH --output=stataExampleJob.o
+#SBATCH --error=stataExampleJob.e
+#SBATCH --job-name=stataExampleJob
 
 
 ## print start date and time
 echo Job started on:
 date -u
 
-module load R
+module load Stata/16
 
-Rscript calc-squares.R
+stata hello-world.do
 
 ## print end date and time
 echo Job ended on:
