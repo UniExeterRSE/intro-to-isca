@@ -95,7 +95,7 @@ We can load the specific version of a software by specifying it when we run `mod
 
 Installing software can be a fustrating experience. As software are often interrelated, a faulty or partial installation of one piece of software can have fairly dramatic impact on other software. For this reason, the locations where software is typically installed is not writable by regular users. You will not have "admin" rights or "root" access and limits you abilty to install software in the usual manner. 
 
-There are a couple of options if you require software that is not currently avaiable or you require a more bespoke version. The optimal solution depends on the specific software.
+There are a couple of options if you require software that is not currently available or you require a more bespoke version. The optimal solution depends on the specific software.
 
 + Is it a software that needs installing, or is it just an executable that you can run? Some software come ready complied and you can download the executable file to either your home or project files. Assuming that you can identify and load all the relevant dependecies this should be very quick to do. A common issue with this method is ensuring that the "file" has the correct permissions and the shell recognises it as a programme rather than a file. 
 + Request for it to be installed. If the software needs a more involved installation process, that takes advatange of root privledges they you will need sys admin to install for you. Log an enquiry and the ISCA support team will attempt to install it for you.
