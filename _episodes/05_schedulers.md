@@ -105,7 +105,31 @@ We submit this job by running `sbatch hello-world-submission.sh`. This creates a
 
 ![](../fig/job-submission.png)
 
-Rather than provide the output from the script, instead we get a message saying `Submitted batch job` followed by a number. This number is the job id and can be used to track the job. Our work is done – now the scheduler takes over and tries to run the job for us. While the job is waiting to run, it goes into a list of jobs called the queue. To check on our job’s status, we check the queue using the command `squeue -u yourUsername`.
+Rather than provide the output from the script, instead we get a message saying `Submitted batch job` followed by a number. This number is the job id and can be used to track the job. 
+
+### Troubleshooting
+
+If you didn't get this output then the job scheduler didn't recognize your script as a job submission script. You might get an error message to help you debug why.
+
+Common errors:
+
+**1. Incorrect line breaks.** As shown in the figure below, a common error if you work on a unix machine is the incorrect **E**nd **o**f **l**ine (EOL) characters. 
+
+![](../fig/line-breaks-error.png)
+
+As the job scheduler is running on UNIX system, it is expecting your script to be formatted with UNIX characters. If you were to open your script in a text editor you likely wouldn't be able to see the problem, but the subtle difference between Windows (DOS) and UNIX in how the end of a line is coded causes an issue. It's ok as there is an easy fix. If you open your script in notepad++ you can change the EOL coding to UNIX through the following menu sequence: "Edit" -> "EOL conversion" -> "Unix". Then resave your script and resubmit.
+
+![](../fig/change-line-breaks.png)
+
+**2. Script not recognised as a job submission.** You can't submit your job to the queue if the scheduler does not recognise the commands in your script as instructions. In this case you will get the error shown in the figure below stating that the job submission has failed. 
+
+![](../fig/sbatch-error.png)
+
+This means that either you did not include the SLURM commands or you did not include commands recognised by the scheduler running on the system you are using. Note that the error message refers to "No partition specified" this is just a alternative term for a queue on the system.
+
+## Tracking the job
+
+Once you see the "Job submitted" output you know that your job submission script has been accepted and the scheduler takes over and tries to run the job for us. This is important to note as it helps you debug any other errors you may or may not get. While the job is waiting to run, it goes into a list of jobs called the queue. To check on our job’s status, we check the queue using the command `squeue -u <yourUsername>`.
 
 ![](../fig/squeue.png)
 
@@ -113,7 +137,54 @@ We can track our job in the output above, either by it's name or job ID. We can 
 
 If you recall, when we run our script on the login node, the output was printed to the terminal – but now, when `squeue` shows the job has finished, nothing was printed to the terminal.
 
-When we submitted our job to the cluster we told it where to redirect the output. Use ls to find and cat to read the file. 
+When we submitted our job to the cluster we told it where to redirect the output. The relevant SLURM commands were 
+
+```
+#SBATCH --output=hello-world.o
+#SBATCH --error=hello-world.e
+```
+
+Let's look at the content of those files - they should be located in the same folder as you launched the job from. 
+
+First hello-world.o
+
+```
+Job started on:
+Tue Dec 13 20:04:32 UTC 2022
+hello-world
+This script is running on comp088
+Job ended on:
+Tue Dec 13 20:04:32 UTC 2022
+
+```
+
+This file contains all the standard output, i.e. the messages that would have been printed to the terminal.
+
+Next hello-world.e
+
+```
+
+```
+
+This file is empty. This files contains the standard error i.e. the error messages. Ours is empty as our job submission ran without error. 
+
+The default of the scheduler is to combine this output into a single file with the filename: slurm-%j.out, where %j is the job number. You can change the location of these files by specifying a path to where you want them (using either a relative or absolute path).
+
+### More troubleshooting
+
+If you successfully submitted your job to the queue but you can't see it in the queue, chances are there is an error in the script and it was queued, started and hit and error before you could load the status of the queue. This should be confirmed by the arrival of an e-mail in you inbox where the job is stated as FAILED. Of course even if you can see it in the queue and it's status is listed as R there is no guarantee that it will "complete". When a job finishes prematurely or FAILs we need to try and work out why. 
+
+In this situation, the two output files are your main sources. Naively we might assume that the error output is the where the answer will be - and yes the error message can be found in that file. But often the error message passed to the processor can be written in unfamiliar terminology. You may find that the output file can help you identify where the script the error must have occurred, as you got some of the output you were expecting, or the function/command printed a more helpful and interpretable message prior to issues the error message to the error output. The content of both these files is sometimes needed to determine first, where in the script the error occured and second, what might have caused it. 
+
+Some common errors:
+
+**1. Incorrect filepath.** This is likely to involve a statement somewhere like "File/directory XXX does not exist" or "Can't find XXX" or "XXX not found". This means you have incorrectly specified the location of the file/directory the programme is expecting to find or create. It means that you either are running the command from a different place that you thought, and hence a relative path is incorrect, or you have incorrectly specified the path to the file (maybe due to a typo). This can be confirmed with a simple `ls <\path\to\where\you\thought\the\file\was>`
+
+**2. Can't find command X.** AS well as finding the files and directorys, the compute node needs to be able to locate the programme or executable you want to run. You may get an error like, `-bash: plink: command not found`. This means that it could not find the programme "plink". This could be because you haven't loaded it into your environment. You've misspelt it  (remember it is case sensitive), the file path is incorrect and it's not available at one of the locations listed in `echo $PATH` or it's file permissions are not set to run it as an executable. Assuming you own the execitable you can change the permissions with `chmod a+x <path\to\executable>`.  
+
+**3. Run out of memory.** With experience (and/or google) you may start to recognise that "OOM" stands for out of memory. Anything error with the work "Killed" in indicates that you asked too much of the compute resources you requested and to protect the rest of the system your job was shut down. Options here are to a) request more resource b) use the high memory nodes or c) restructure your analysis to reduce the memory load.
+
+**4. Exceeded walltime.** If you job needed 10 hours and you only asked for 8 hours, it will run quite happily for the 8 hours and shortly after it will be killed by the scheduler. This is for two reasons, a) the wall time is an important part of how the scheduler decides which job to run next and b) it's a protective measure to prevent broken, infinite jobs clogging the system up. Other jobs on the node will be unaffected. This means that one user cannot mess up the experience of others, the only jobs affected by a mistake in scheduling will be their own.
 
 ## Queues
 
@@ -121,7 +192,7 @@ Compute resources on ISCA are partitioned into different queues, which are desig
 
 There are also a number of other specialised queues which are reserved for specific projects. Your PI should be able to tell you if these are relevant for your project.
 
-You can determine the status of the queues by running the command `sinfo`.
+You can see a full list of all available queues and determine the status of the queues by running the command `sinfo`.
 
 ## Resource Requests
 
@@ -137,47 +208,7 @@ The following are several key resource requests:
 
 --nodes=<nnodes> or -N <nnodes>: How many separate machines does your job need to run on? Note that if you set ntasks to a number greater than what one machine can offer, Slurm will set this value automatically.
 
-Note that just requesting these resources does not make your job run faster, nor does it necessarily mean that you will consume all of these resources. It only means that these are made available to you. Your job may end up using less memory, or less time, or fewer nodes than you have requested, and it will still run.
-
-It’s best if your requests accurately reflect your job’s requirements. We’ll talk more about how to make sure that you’re using resources effectively in a later episode of this lesson.
-
-## Job environment variables
-
-When Slurm runs a job, it sets a number of environment variables for the job. One of these will let us check what directory our job script was submitted from. The `SLURM_SUBMIT_DIR` variable is set to the directory from which our job was submitted. 
-
-We can modify our job submission script so that it prints out the location from which the job was submitted.
-
-
-```
-#!/bin/sh
-#SBATCH --export=ALL # export all environment variables to the batch job.
-#SBATCH -p sq # submit to the serial queue
-#SBATCH --time=00:10:00 # Maximum wall time for the job.
-#SBATCH -A Research_Project-HPC-Training # research project to submit under. 
-#SBATCH --nodes=1 # specify number of nodes.
-#SBATCH --ntasks-per-node=16 # specify number of processors per node
-#SBATCH --mail-type=END # send email at job completion 
-#SBATCH --output=hello-world.o
-#SBATCH --error=hello-world.e
-#SBATCH --job-name=hello-world
-
-## print start date and time
-echo Job started on:
-date -u
-
-echo "hello-world"
-
-## print node job run on
-echo -n "This script is running on "
-hostname
-
-echo "This job was launched in the following directory:"
-echo ${SLURM_SUBMIT_DIR}
-
-## print end date and time
-echo Job ended on:
-date -u
-```
+Note that just requesting these resources does not make your job run faster, nor does it necessarily mean that you will consume all of these resources. It only means that these are made available to you. Your job may end up using less memory, or less time, or fewer nodes than you have requested, and it will still run. It’s best if your requests accurately reflect your job’s requirements. 
 
 Resource requests are typically binding. If you exceed them, your job will be killed. Let’s use wall time as an example. We will request 1 minute of wall time, and attempt to run a job for two minutes.
 
@@ -210,7 +241,7 @@ date -u
 
 Submit the job and wait for it to finish. Once it is has finished, check the log file.
 
-Our job was killed for exceeding the amount of resources it requested. Although this appears harsh, this is actually a feature. Strict adherence to resource requests allows the scheduler to find the best possible place for your jobs. Even more importantly, it ensures that another user cannot use more resources than they’ve been given. If another user messes up and accidentally attempts to use all of the cores or memory on a node, Slurm will either restrain their job to the requested resources or kill the job outright. Other jobs on the node will be unaffected. This means that one user cannot mess up the experience of others, the only jobs affected by a mistake in scheduling will be their own.
+
 
 ## Cancelling a Job
 
