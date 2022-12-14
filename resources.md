@@ -9,4 +9,6 @@ title: Resources
 
 [hello-world-submission.sh](scripts/hello-world-submission.sh)
 
+[scripts.zip](scripts/scripts.zip)
+
 ## Links to additional material
