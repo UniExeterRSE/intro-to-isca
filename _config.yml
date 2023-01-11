@@ -1,7 +1,7 @@
 # Basic options
 title: Introduction to High Performance Computing and ISCA
 short_name: Intro to ISCA
-developers: Matthew West
+developers: Matthew West & Eilis Hannon
 description: Learn what a HPC system is, and how to use it to increase the computational power of your research.
 n_sessions: 2
 prereq: Intro to UNIX
