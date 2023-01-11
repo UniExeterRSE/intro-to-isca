@@ -34,9 +34,10 @@
       <footer class="inner">
         {% include prev_next_navbar.html %}
         {% if page.adapted %}
-        <p class="copyright">This episode was adapted from <a href="{{ page.attrib_link }}">{{ page.attrib_name }}</a></p>
+        <p class="copyright">The material on this page is © University of Exeter and licensed under <a href ="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0.</a> 
+          It has been adapted from <a href="{{ page.attrib_link }}">{{ page.attrib_name }}</a> which is © {{ page.attrib_copywrite }} and licensed under <a href ={{ page.attrib_license_link }}>{{ page.attrib_license }}</a></p>
         {% else %}
-        <p class="copyright">This episode was developed by the University of Exeter Coding for Reproducible Research Community.</a></p>
+        <p class="copyright">The material on this page is © University of Exeter and licensed under <a href ="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0.</a></p>
         {% endif %}        
         {% if site.github.is_project_page %}
         <p class="copyright">Workshop maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
