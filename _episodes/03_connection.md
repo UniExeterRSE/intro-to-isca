@@ -46,7 +46,7 @@ you@laptop:~$ ssh username@hostname
 ~~~
 {: .language-bash}
 
-where `username` is your standard login and the `hostname` is address of the server you wish to log into. For this workshop the `hostname` will be `login02.isca.exeter.ac.uk`. Don't forget the **@** symbol, like you would see in an email address. You will then be prompted for your university password.
+where `username` is your standard login and the `hostname` is address of the server you wish to log into. For this workshop the `hostname` will be `login02.isca.ex.ac.uk`. Don't forget the **@** symbol, like you would see in an email address. You will then be prompted for your university password.
 
 ### First Time Warning
 An important security warning will occur whenever you attempt to log into another machine for the first time. 

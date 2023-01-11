@@ -43,17 +43,21 @@ They are frequently called “clusters”, “supercomputers” or resources for
 
 Using a cluster often has the following advantages for researchers:
 
-+ Speed. With many more CPU cores, often with higher performance specs, than a typical laptop or desktop, HPC systems can offer significant speed up.
-+ Volume. Many HPC systems have both the processing memory (RAM) and disk storage to handle very large amounts of data. Terabytes of RAM and petabytes of storage are available for research projects.
-+ Efficiency. Many HPC systems operate a pool of resources that are drawn on by many users. In most cases when the pool is large and diverse enough the resources on the system are used almost constantly.
-+ Cost. Bulk purchasing and government funding mean that the cost to the research community for using these systems in significantly less that it would be otherwise.
-+ Convenience. Maybe your calculations just take a long time to run or are otherwise inconvenient to run on your personal computer. There’s no need to tie up your own computer for hours when you can use someone else’s instead.
++ **Speed**: With many more CPU cores, often with higher performance specs, than a typical laptop or desktop, HPC systems can offer significant speed up.
++ **Volume**: Many HPC systems have both the processing memory (RAM) and disk storage to handle very large amounts of data. Terabytes of RAM and petabytes of storage are available for research projects.
++ **Efficiency**: Many HPC systems operate a pool of resources that are drawn on by many users. In most cases when the pool is large and diverse enough the resources on the system are used almost constantly.
++ **Cost** Bulk purchasing and government funding mean that the cost to the research community for using these systems in significantly less that it would be otherwise.
++ **Convenience**: Maybe your calculations just take a long time to run or are otherwise inconvenient to run on your personal computer. There’s no need to tie up your own computer for hours when you can use someone else’s instead.
 
 This is how a large-scale compute system like a cluster can help solve problems like those listed at the start of the lesson. It also creates new opportunities to address new research questions previously thought too computational intensive. 
 
 ## What does a HPC system consist of?
+One way to conceptualize a HPC cluster is a three-legged stool
+1. Login/Submit: where users submit their work from
+2. Compute/Execute: The many machines that do the computational tasks
+3. Controller/Manager: the machine that does the automated scheduling of tasks on compute resources
 
-High Performance Computers are really clusters of hundreds (sometimes thousands) of smaller computers, typically referred to as nodes. Each node then consists of multiple cores typically 16 or 20 cores each. You might of a HPC system being described in terms of the number of nodes or cores it has available, where these are the order of hundreds or thousands. For a sense of scale, your average desktop or laptop computer has between 4 and 8 CPU cores. 
+So these HPC systems are really clusters of hundreds (sometimes thousands) of smaller computers (nodes) connected together with high-speed networking. Our compute nodes have between 16 and 48 CPU cores each, depending on when they were purchased. For a sense of scale, your average desktop or laptop computer has between 4 and 8 CPU cores. 
 
 Each node is likely a lot more powerful than the computer you have on your desk right now, and to look at they are very different, but inside they contain all the same basic components like processors, hard disks, memory, and an operating system. Where the true power of HPC comes in is the nodes' ability to work together. You submit your code as self-contained jobs from a login node, and the rest of the nodes, or compute nodes, are where your code actually runs. HPC systems typically use a resource manager and batch scheduler to handle the distribution of jobs to nodes.
 

@@ -28,7 +28,7 @@ Championed by and in partnership with
 - EPSRC Hub for Quantitative Modelling in Healthcare
 - Translational Research Exchange @ Exeter (TREE)
 
-This workshop, and the others in the series, was put together by Research IT, the Research Software Engineering Group alongside other researchers at UoE. It has been adapted from the (HPC Carpentries lessons)[https://www.hpc-carpentry.org/hpc-shell/]. The programme and workshops are under constant evolution. We appreciate your patience as we develop and test these materials and we are grateful for your (feedback)[https://forms.office.com/r/s4GK3VjT6v] which is a core component of this process. 
+This workshop, and the others in the series, was put together by Research IT, the Research Software Engineering Group alongside other researchers at UoE. It has been adapted from the [HPC Carpentries lessons](https://www.hpc-carpentry.org/hpc-shell/). The programme and workshops are under constant evolution. We appreciate your patience as we develop and test these materials and we are grateful for your [feedback](https://forms.office.com/r/s4GK3VjT6v) which is a core component of this process. 
 
 ## Workshop format
 

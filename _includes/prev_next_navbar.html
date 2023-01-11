@@ -1,6 +1,6 @@
 {% include sortedpages.html %}
 <div class="topnav">
-  <a class="active" href="https://uniexeterrse.github.io/UoE-workshop-template/">Home</a>
+  <a class="active" href="https://uniexeterrse.github.io/intro-to-isca/">Home</a>
   {% for node in sorted_pages %}
   {% if page.url == node.url %}
     {% unless forloop.first %} 
@@ -8,7 +8,7 @@
     {% endunless %}
     {% unless forloop.last %} 
       {% assign nextpage = sorted_pages[forloop.index] %}
-	<a class="next" href="{{ site.baseurl }}{{nextpage.url}}">&laquo; Next episode</a>
+	<a class="next" href="{{ site.baseurl }}{{nextpage.url}}">&raquo; Next episode</a>
     {% endunless %}
   {% endif %}
   {% assign prevpage = node %}
