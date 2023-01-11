@@ -33,6 +33,11 @@
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         {% include prev_next_navbar.html %}
+        {% if page.carpentries %}
+        <p class="copyright">This episode was adapted from the Carpentries lesson <a href="{{ page.attrib_link }}">{{ page.attrib_name }}</a></p>
+        {% else %}
+        <p class="copyright">This episode was developed by the University of Exeter Coding for Reproducible Research Community.</a></p>
+        {% endif %}        
         {% if site.github.is_project_page %}
         <p class="copyright">Workshop maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
