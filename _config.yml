@@ -6,7 +6,7 @@ description: Learn what a HPC system is, and how to use it to increase the compu
 n_sessions: 2
 prereq: Intro to UNIX
 url: https://uniexeterrse.github.io/intro-to-isca
-notes_on: false
+notes_on: true
 
 
 # Specify that things in the episodes collection should be output.
