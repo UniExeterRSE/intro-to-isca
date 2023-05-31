@@ -3,7 +3,64 @@ layout: info_page
 title: Resources
 ---
 
-Theses instructional materials is made available under the [Creative Commons Attribution
-license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/legalcode). These materials were adapted from [the Carpentries](https://carpentries.org/). Specifcally we have developed the [HPC Carpentry Intro to HPC Shell lessons(https://github.com/hpc-carpentry/hpc-shell) adding our own custom content to reflect the HPC systems at Exeter. 
+Instructional Material
+----------------------
 
-Breifly, under this license you are permitted to share our materials, and to adapt them into your own content subject to you acknowledging the original source (either us or the Carpentries). Please note that  this is a human-readable summary of (and not a substitute for) the [legal code](https://creativecommons.org/licenses/by/4.0/legalcode).
+The instructional material in this course is copyright © 2023 University of Exeter
+and is made available under the Creative Commons Attribution 4.0 International
+licence (https://creativecommons.org/licenses/by/4.0/). Instructional material
+consists of material that is contained within the _episodes, images and downloads
+folders in this repository, with the exception of code snippets and example
+programs found in files within these folders. Such code snippets and example
+programs are considered software for the purposes of this licence. 
+
+
+Software
+--------
+
+Except where otherwise noted, software provided in this repository is made
+available under the MIT licence (https://opensource.org/licenses/MIT).
+
+Copyright © 2023 University of Exeter
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+The software in this repository is adapted from software that is covered by the
+following copyright and permission notice:
+
+    Copyright © 2023 High Performance Computing Carpentry
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
