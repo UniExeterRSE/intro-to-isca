@@ -5,6 +5,12 @@ order: 2
 session: 1
 length: 20
 toc: true
+adapted: true
+attrib_name: HPC Carpentry - Why Use a Cluster?
+attrib_link: https://www.hpc-carpentry.org/hpc-shell/00-hpc-intro/index.html
+attrib_copywrite: The Carpentries
+attrib_license: CC-BY 4.0
+attrib_license_link: https://creativecommons.org/licenses/by/4.0/
 ---
 
 ## Questions

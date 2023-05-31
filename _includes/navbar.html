@@ -2,7 +2,11 @@
   <a href="{{ site.url }}">Home</a>
   <a href="{{ site.url }}/code.html">Code of conduct</a>
   <a href="{{ site.url }}/setup.html">Installation guide</a>
+  {% if site.notes_on %}
   <a href="{{ site.url }}/contents.html">Course notes</a>
+  {% else %}
+  <a href="{{ site.url }}/contents_off.html">Course notes</a>
+  {% endif %}
   <a href="{{ site.url }}/resources.html">Resources</a>
   <a href="{{ site.url }}/license.html">License</a>
 </div>
