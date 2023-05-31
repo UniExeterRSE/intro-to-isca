@@ -3,6 +3,7 @@ layout: page
 title: Welcome 
 order: 1
 toc: true
+adapted: false
 ---
 
 ## Welcome
