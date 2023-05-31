@@ -5,6 +5,7 @@ order: 4
 session: 1
 length: 20
 toc: true
+adapted: false
 ---
 
 ## Learning Objectives
@@ -13,7 +14,7 @@ At the end of this lesson you will be able to:
 
 - Connect to the ISCA HPC system with your university credentials
 - Create an ssh `config` file for easier access via the command line
-- Generate a public-key pair and use this to log into ISCA
+
 
 ## Via the Command Line
 
@@ -95,5 +96,3 @@ An alternative means of connecting to a remote host server is via an application
 
 You will be prompted in a new terminal session for your username and password.
 
-
-## Public Keys

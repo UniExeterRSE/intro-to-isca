@@ -5,6 +5,12 @@ order: 7
 session: 2
 length: 20
 toc: true
+adapted: true
+attrib_name: HPC Carpentry - Accessing software via Modules
+attrib_link: https://carpentries-incubator.github.io/hpc-intro/14-modules/index.html
+attrib_copywrite: High Performance Computing Carpentry
+attrib_license: CC-BY 4.0
+attrib_license_link: https://creativecommons.org/licenses/by/4.0/
 ---
 
      Questions
