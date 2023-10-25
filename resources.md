@@ -12,3 +12,5 @@ title: Resources
 [scripts.zip](scripts/scripts.zip)
 
 ## Links to additional material
+
+[hpc-uk](https://www.hpc-uk.ac.uk)

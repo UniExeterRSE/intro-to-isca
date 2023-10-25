@@ -76,7 +76,9 @@ Also, when you submit your paper or article to Symplectic please add ARC - ISCA 
 For those researchers based in Cornwall, you have access to the Athena and Carson clusters, whose details can be found on Sharepoint [here](https://universityofexeteruk.sharepoint.com/sites/CornwallARC).
 
 ### Isambard
-The University of Exeter is a member of the GW4 consortium, which along with the Met Office, supports the ARM-based [Isambard](https://gw4-isambard.github.io/docs/) Tier-2 supercomputer. It is one of a dozen Tier-2 national facilities that provide access to larger quantities of computing resources than what is normally found in a single campus (Tier-3) system. If you do find that your needs are beyond what Exeter itself can provide, please contact Research IT so we can direct you to the 
+The University of Exeter is a member of the GW4 consortium, which along with the Met Office, supports the ARM-based [Isambard](https://gw4-isambard.github.io/docs/) Tier-2 supercomputer. It is one of a dozen Tier-2 national facilities that provide access to larger quantities of computing resources than what is normally found in a single campus (Tier-3) system. If you do find that your needs are beyond what Exeter itself can provide, please contact Research IT so they can direct you to the computing resource that is most appropriate for your needs. 
+
+There are a number of HPC facilities that are available to the UK academic research community. The [hpc-uk](https://www.hpc-uk.ac.uk/about/accessibility.html) website is a useful resource in this regard.
 
 ## External Funding
 - Research IT is no longer supporting a "priority queue" on ISCA
