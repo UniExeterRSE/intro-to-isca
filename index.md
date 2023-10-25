@@ -35,8 +35,8 @@ This a hybrid workshop run over 2 sessions. The [schedule can be found here](htt
 
 | Session name | Dates | Time  | Venue | Sign up link |
 | --- |--- |--- |--- | --- |
-| Session 1 | 8th & 15th Dec | 10am-1pm | Old Library, Streatham | Closed |
-
+| Session 1 | 1st November 2023 | 1pm-4pm | Old Library, Streatham | Closed |
+| Session 2 | 8th November 2023 | 1pm-4pm | Old Library, Streatham | Closed |
 
 
 ## Set-up instructions for attendees
