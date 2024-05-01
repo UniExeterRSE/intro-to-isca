@@ -16,7 +16,7 @@ This course will covering the following:
 
 - what an high performance computing (HPC) cluster is and what type of tasks it is suited to.
 - what computing resources are necessary to run a large workload.
-- how to log on to the cluster and navigate around the file system
+- how to log on to the cluster and navigate around the file system.
 - how to submit and manage job tasks in the scheduler’s queue.
 - the array jobs syntax, a tool to efficiently parallel repetitive tasks.
 
@@ -33,9 +33,9 @@ This a hybrid workshop run over 2 sessions. The [schedule can be found here](htt
 
 ## Upcoming course dates
 
-| Session name | Dates | Time  | Venue | Sign up link |
-| --- |--- |--- |--- | --- |
-| Sessions 1 & 2 | 1st & 8th November 2023 | 1pm-4pm | Training Room 4, Old Library, Streatham | [Pre-course Questionnaire](https://forms.office.com/Pages/ResponsePage.aspx?id=d10qkZj77k6vMhM02PBKU6c8tNVRoxhAjFFJWmm07JtUOFUxN05CWFdQQTVTWVc4SDBGSjBKSVUxRy4u) |
+| Session name | Dates | Time  | Venue |
+| --- |--- |--- |--- |
+| Sessions 1 & 2 | 7th & 14th May 2024 | 10AM-1PM | Training Room 4, Old Library, Streatham | 
 
 
 ## Set-up instructions for attendees

@@ -37,7 +37,7 @@ The scheduler used on ISCA is Slurm. Although Slurm is not used everywhere, runn
 
 ## Running a Batch Job
 
-The most basic use of the scheduler is to run a command non-interactively. Any command (or series of commands) that you want to run on the cluster is called a job, and the process of using a scheduler to run the job is called batch job submission.
+The most basic use of the scheduler is to run a command non-interactively. Any command (or series of commands) that you want to run on the cluster is called a *job*. The process of using a scheduler to run the job is called *batch job submission*.
 
 In this case, the job we want to run is a shell script – essentially a text file containing a list of UNIX commands to be executed in a sequential manner. Our shell script `hello-world.sh` has the following parts:
 
