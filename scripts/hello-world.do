@@ -1,3 +1,0 @@
-display "Hello, world"
-
-exit
